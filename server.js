@@ -71,5 +71,10 @@ app.post('/send-email', async (req, res) => {
   }
 });
 
+
+const chatBotRouter = require('./routes/chatbot.router');
+app.use("/api/gemini", chatBotRouter);
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
